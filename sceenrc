@@ -1,0 +1,47 @@
+escape ^Zz
+shell $SHELL
+term xterm-256color
+
+#term xterm-256color
+#termcapinfo xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+#defbce "on"
+
+#bind 'U' eval "encoding utf8" "stuff 'export LANG=ja_JP.UTF-8\012'"
+#bind 'E' eval "defkanji eucJP" "defencoding eucJP" "encoding eucJP eucJP" "stuff 'export LANG=ja_JP.EUC-JP\012'"
+
+defutf8 on
+defencoding utf-8
+encoding utf-8 utf-8
+#defkanji eucJP
+#defencoding eucJP
+#encoding eucJP eucJP
+
+altscreen on
+autodetach on
+
+#bind u copy
+#bind ^u copy
+#bind k quit
+#bind ^k quit
+#bind h help
+#bind ^h help
+
+#defhstatus "^En:^EH"
+#defhstatus "^En ^Et"
+#hardstatus off
+#caption always "%{=b wb}%-w%{=bu dr}%n %t%{-}%+w "
+hardstatus alwayslastline "$USER@$HOSTNAME %=%Y/%m/%d(%D) %c"
+#hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+
+#caption always "%{= Rk} %?%F%{b kr}%? %?%h%:%t (screen #%n)%? %{-}"
+hardstatus alwayslastline "%{= Gk} %-Lw%40L>%{b kg} %n %t %{-}%+Lw%-040=%{b km} %l %{.b} %Y/%m/%d %C:%s %A "
+
+startup_message off
+#scrollback 4000
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+deflog on
+
+shelltitle '$ |zsh'
+bufferfile "$HOME/.screen/screen-exchange"
+defscrollback 10000
